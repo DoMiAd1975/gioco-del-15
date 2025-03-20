@@ -1,48 +1,81 @@
-# Implementazione del gioco della Battaglia Navale in Java
+### **Esercizio: Gioco del 15**  
+**Obiettivo:**  
+Creare un programma in Java che implementi il **Gioco del 15**, un puzzle numerico con una griglia **4x4** dove i numeri da **1 a 15** devono essere ordinati, muovendo le tessere in uno spazio vuoto.  
 
-# Obiettivo: Realizzare un programma in Java che simuli il gioco della Battaglia Navale in Java, seguendo le regole complete del gioco.
+---
 
-# Classe: 3D Informatica
+### **Requisiti**
+1. **Inizializzare una matrice 4x4** con i numeri da 1 a 15 e uno spazio vuoto `0`.
+2. **Mescolare la matrice** in modo casuale all'inizio della partita.
+3. **Consentire al giocatore di spostare le tessere** inserendo comandi (`W`, `A`, `S`, `D` per su, sinistra, giù, destra).
+4. **Gestire le eccezioni**:
+   - Se il giocatore inserisce un comando non valido, lanciare un'eccezione `IllegalArgumentException`.
+   - Se il giocatore tenta una mossa impossibile (es. muovere una tessera oltre i bordi), lanciare un'eccezione personalizzata `MossaNonValidaException`.
+5. **Controllare la vittoria**: il giocatore vince quando i numeri sono ordinati correttamente.
 
-# Requisiti:
+---
 
- # Il gioco deve essere giocabile in due modalità:
-    o	Giocatore vs Computer: Il computer posiziona automaticamente le proprie navi e gioca contro il giocatore.
-    o	Giocatore vs Giocatore: Due giocatori inseriscono manualmente le coordinate delle proprie navi e si sfidano.
+### **Punti Extra**
+- Aggiungere un contatore per il numero di mosse.
+- Implementare un sistema per annullare l'ultima mossa.
 
- # La griglia di gioco deve essere di dimensione 10x10 e rappresentare i seguenti elementi:
-   
-    o	Acqua (~): celle vuote
-    o	Nave (N): celle contenenti una nave
-    o	Colpo mancato (O): colpo andato a vuoto
-    o	Colpo a segno (X): nave colpita
+### **DA SAPERE**
+- Completare il codice del file GiocoDelQuindici.
 
- # Posizionamento delle navi:
-    o	Ogni giocatore/computer deve posizionare automaticamente o manualmente 5 navi in punti diversi della griglia.
-    o	Le navi possono occupare una o più caselle, seguendo le dimensioni classiche:
-    
-        1 Nave da 5 caselle
-        1 Nave da 4 caselle
-        1 Nave da 3 caselle
-        1 Nave da 3 caselle
-        1 Nave da 2 caselle
+Ecco la soluzione del **Gioco del 15** in Java, con l'utilizzo di una **matrice bidimensionale**, gestione delle **eccezioni** e verifica della vittoria.  
 
- # Le navi non possono sovrapporsi e devono essere posizionate orizzontalmente o verticalmente.
+---
 
- # Svolgimento della partita:
-    o	I giocatori si alternano per scegliere una coordinata (riga e colonna) da colpire.
-    o	Se il colpo è a segno, la nave viene contrassegnata con una X.
-    o       Se il colpo è mancato, la casella viene contrassegnata con una O.
-    o	Il gioco continua finché un giocatore affonda tutte le navi avversarie.
-    o	Ogni volta che si gioca deve essere stampata a schermo la griglia evidenziando il risultato, 
-            ma evitando di visualizzare la posizione delle navi, ma solo i colpi mancati, i colpi a segno.
-  
- # Stampa finale delle griglie:
-  Alla fine della partita, viene stampata la griglia di ciascun giocatore, 
-    evidenziando con parentesi (X) le posizioni delle navi affondate.
+### **Caratteristiche della soluzione:**
+- **Matrice 4x4** con numeri da `1` a `15` e un `0` che rappresenta lo spazio vuoto.  
+- **Mescolamento iniziale** per generare una disposizione casuale.  
+- **Movimenti con input (`W`, `A`, `S`, `D`)** per spostare le tessere.  
+- **Gestione delle eccezioni**:
+  - `IllegalArgumentException` se l'input è errato.  
+  - `MossaNonValidaException` se la mossa non è consentita.  
+- **Verifica della vittoria**, controllando se i numeri sono ordinati correttamente.  
 
- # DA SAPERE: 
- all'interno della cartella src troverete il file BattagliaNavale.java con delle parti di codice mancanti, completare e migliorare il codice già presente.
- Personalizzarlo a piacimento e commentare le implementazioni effettuate e commentare anche le parti visibili del codice.
+---
+### **Come Funziona**
+1. Il gioco crea una **griglia 4x4** con numeri da **1 a 15** e uno spazio vuoto `0`.  
+2. La griglia viene **mescolata** in modo casuale.  
+3. L'utente può muovere una tessera adiacente allo **spazio vuoto** usando i comandi:  
+   - `W` (Su)  
+   - `A` (Sinistra)  
+   - `S` (Giù)  
+   - `D` (Destra)  
+   - `Q` (per uscire dal gioco)  
+4. Se l'utente inserisce un comando non valido (`X`, `Z`, ecc.), viene lanciata una **IllegalArgumentException**.  
+5. Se l'utente tenta di fare una **mossa non valida** (es. muoversi oltre i bordi), viene lanciata una **MossaNonValidaException**.  
+6. Il gioco termina quando l'utente **ordina correttamente i numeri da 1 a 15**.  
 
+---
+
+### **Esempio di Output**
+```
+=== Gioco del 15 ===
+ 1  2  3  4 
+ 5  6  7  8 
+ 9 10 11 12 
+13 14 15   
+
+Inserisci la mossa (W = su, S = giù, A = sinistra, D = destra, Q = esci):  
+A  
+Errore: Mossa non valida! Non puoi uscire dai limiti.  
+
+S  
+ 1  2  3  4  
+ 5  6  7  8  
+ 9 10 11   
+13 14 15 12  
+```
+
+---
+
+### **Varianti ed Estensioni**
+- Implementare un **sistema per annullare l'ultima mossa**.  
+- Aggiungere un **contatore di mosse**.  
+- **Migliorare la mescolatura** garantendo che il puzzle sia sempre risolvibile.  
+
+ 
 Buon lavoro! 🎲
