@@ -1,0 +1,19 @@
+Esercizio: Realizzazione del Gioco della Tombola in Java
+
+Obiettivo: Scrivere un programma in Java che simuli il gioco della Tombola. Il programma dovrà gestire l’estrazione casuale dei numeri, la generazione delle cartelle e il controllo delle vincite (ambo, terno, quaterna, cinquina e tombola).
+
+Requisiti:
+
+Generazione delle cartelle:
+
+Ogni cartella deve essere composta da 3 righe e 9 colonne. Ogni riga deve contenere 5 numeri casuali unici, rispettando la suddivisione per colonna: Colonna 1: numeri da 1 a 9 Colonna 2: numeri da 10 a 19 Colonna 3: numeri da 20 a 29 … Colonna 9: numeri da 80 a 90 Le celle vuote devono essere rappresentate adeguatamente. Estrazione dei numeri:
+
+Il programma deve estrarre numeri casuali da 1 a 90, senza ripetizioni. Dopo ogni estrazione, il numero deve essere mostrato all’utente. Verifica delle vincite:
+
+Dopo ogni estrazione, il programma deve controllare le cartelle e segnalare eventuali vincite: Ambo (2 numeri sulla stessa riga) Terno (3 numeri sulla stessa riga) Quaterna (4 numeri sulla stessa riga) Cinquina (5 numeri sulla stessa riga) Tombola (tutti i numeri della cartella estratti) Interazione con l’utente:
+
+Il programma deve consentire all'utente di avviare una nuova partita. Deve stampare le cartelle all'inizio della partita. Dopo ogni estrazione, deve mostrare il numero estratto e le eventuali vincite. Opzionale:
+
+Permettere la partecipazione di più giocatori con cartelle diverse. Consegna:
+
+Il codice deve essere ben commentato e strutturato in classi (es. Cartella, Tombola, Giocatore).  Buon lavoro! 🎲
